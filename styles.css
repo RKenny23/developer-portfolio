@@ -17,22 +17,19 @@
   text-decoration: none;
   font-family: "Prata", serif;
 }
-/* 
-html {
-  background-color: var(--dark-color);
-} */
+
 
 body {
   width: 80%;
   margin: 0 auto;
   margin-top: 3rem;
   background-color: var(--dark-color);
-
+  overflow-x: hidden;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
-  font-size: 3rem;
   color: var(--light-color);
 }
 
@@ -96,7 +93,6 @@ p {
 
 .nav-links .contact-btn {
   float: right;
-
 }
 
 .contact-btn a {
@@ -104,7 +100,7 @@ p {
 }
 
 .contact-btn:hover {
-  transform: scale(.98);
+  transform: scale(0.98);
   transition: 0.2s;
 }
 
@@ -144,6 +140,7 @@ p {
 
 .featured-item h2 {
   margin-top: 2rem;
+  font-size: 3rem;
 }
 
 .featured-item p {
@@ -152,12 +149,49 @@ p {
 
 .about-section {
   background-color: var(--dark-gray);
-  margin-top: 5rem;
-  padding: 4rem 0;
+  margin: 5rem -12.5%;
+  padding: 4rem 12.5%;
+}
+
+.about-section h1 {
+  font-size: 3rem;
 }
 
 .about-section p {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+}
+
+.about-section div:nth-child(2) p:first-child {
+  margin-top: 0;
+}
+
+.contact-section {
+  margin: 2rem 0;
+  width: 720px;
+}
+
+.contact-section p {
+  margin: 1rem 0;
+}
+
+footer {
+  position: relative;
+  margin: 5rem -12.5% 0;
+  padding: 1rem 12.5%;
+  background-color: var(--dark-gray);
+  justify-content: space-between;
+}
+
+.contact-links {
+  /* display: flex; */
+  position: absolute;
+  top: 18px;
+  right: 10vw;
+}
+
+.contact-links a {
+  padding: 0.3rem;
+  
 }
 
 @media (max-width: 1000px) {
@@ -174,9 +208,7 @@ p {
     display: none;
     width: 100%;
     flex-direction: column;
-    transition: all 0.3s;
     height: 100%;
-    margin-top: -1px;
   }
 
   .navbar {
@@ -232,6 +264,10 @@ p {
     padding: 0 2rem 2rem 0;
   }
 
+  .logo-container img:nth-child(even) {
+    padding-right: 0;
+  }
+
   .grid {
     display: block;
   }
@@ -240,4 +276,11 @@ p {
     margin-bottom: 5rem;
   }
 
+  .contact-section {
+    width: 100%;
+  }
+
+  .lower {
+    display: flex;
+  }
 }
