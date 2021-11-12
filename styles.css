@@ -18,13 +18,15 @@
   font-family: "Prata", serif;
 }
 
+html {
+  overflow-x: hidden;
+}
 
 body {
   width: 80%;
   margin: 0 auto;
   margin-top: 3rem;
   background-color: var(--dark-color);
-  overflow-x: hidden;
 }
 
 h1,
@@ -77,8 +79,8 @@ p {
 .nav-toggler {
   position: absolute;
   display: none;
-
   right: 0;
+  top: 5px;
 }
 
 .contact-btn {
@@ -108,24 +110,42 @@ p {
   display: none;
 }
 
-.hero {
+.hero-section {
   margin-top: 6rem;
   width: 780px;
 }
 
-.hero h1 {
+.hero-section h1 {
   margin-bottom: 1rem;
-  font-size: 4rem;
+  font-size: 3.8rem;
 }
 
 .logo-container {
   display: flex;
-  margin-top: 5rem;
+  margin: 5rem auto;
   justify-content: space-between;
+  align-items: center;
+  gap: 4vw;
+  width: 100%;
 }
 
 .features-section {
   margin-top: 5rem;
+}
+
+.link-arrow {
+  color: var(--light-color);
+  font-size: 2rem;
+}
+
+.link-arrow::after {
+  content:'\2192';
+  margin: 5px;
+  transition: margin 0.15s;
+}
+
+.link-arrow:hover::after {
+  margin-left: 10px;
 }
 
 .grid {
@@ -139,8 +159,9 @@ p {
 }
 
 .featured-item h2 {
+  display:inline-block;
   margin-top: 2rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .featured-item p {
@@ -149,12 +170,12 @@ p {
 
 .about-section {
   background-color: var(--dark-gray);
-  margin: 5rem -12.5%;
-  padding: 4rem 12.5%;
+  margin: 5rem -10vw;
+  padding: 4rem 10vw;
 }
 
 .about-section h1 {
-  font-size: 3rem;
+  font-size: 2.1rem;
 }
 
 .about-section p {
@@ -176,14 +197,13 @@ p {
 
 footer {
   position: relative;
-  margin: 5rem -12.5% 0;
-  padding: 1rem 12.5%;
+  margin: 5rem -10vw 0;
+  padding: 1rem 10vw;
   background-color: var(--dark-gray);
   justify-content: space-between;
 }
 
 .contact-links {
-  /* display: flex; */
   position: absolute;
   top: 18px;
   right: 10vw;
@@ -191,7 +211,10 @@ footer {
 
 .contact-links a {
   padding: 0.3rem;
-  
+}
+
+.contact-links a:last-child {
+  padding-right: 0;
 }
 
 @media (max-width: 1000px) {
@@ -243,44 +266,106 @@ footer {
     display: flex;
   }
 
-  .hero {
+  .hero-section {
     width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .logo-container {
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 390px;
-    margin: 5rem auto;
-  }
-
-  .logo-container img {
-    display: flex;
-    height: 60px;
-    padding: 0 2rem 2rem 0;
-  }
-
-  .logo-container img:nth-child(even) {
-    padding-right: 0;
   }
 
   .grid {
     display: block;
   }
 
+  .featured-item h2 {
+    font-size: 2rem;
+  }
+
   .featured-item p {
     margin-bottom: 5rem;
+  }
+  
+  .about-section {
+    margin: 5rem -5vw;
+    padding: 4rem 5vw;
   }
 
   .contact-section {
     width: 100%;
   }
 
+  .contact-links {
+    right: 5vw;
+  }
+
   .lower {
     display: flex;
+  }
+
+  footer {
+    margin: 5rem -5vw 0;
+    padding: 1rem 5vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-section {
+    margin-top: 4rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+    /* width: 100%; */
+  }
+}
+
+@media (max-width: 320px) {
+  footer .brand-name {
+    font-size: 1rem;
+  }
+  .contact-links {
+    top: 15px;
+  }
+}
+
+/* Logo Container Resizes */
+
+@media (max-width: 1150px) {
+  .logo-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60vw;
+    gap: 2rem 10vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .logo-container {
+    width: 70%;
+  }
+
+@media (max-width: 900px) {
+  .logo-container {
+    width: 75%;
+    min-width: 550px;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo-container {
+    width: 50%;
+    min-width: 450px;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-container {
+    width: 90%;
+    min-width: 250px;
+    gap: 1.5rem;
   }
 }
